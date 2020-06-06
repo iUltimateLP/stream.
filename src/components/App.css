@@ -9,6 +9,14 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+.navbar>a[href] {
+	font-family: "Futura";
+	font-weight: bold;
+	padding-right: 36px;
+	text-decoration: none;
+	color: black;
+}
+
 .navbar-title {
 	font-family: "Futura";
 	font-weight: bold;

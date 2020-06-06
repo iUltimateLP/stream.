@@ -10,7 +10,7 @@
 */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
@@ -86,10 +86,14 @@ class Main extends React.Component {
 		return (
 			<main>
 				<AppBar color="inherit">
-					<Toolbar>
+					<Toolbar className={"navbar"}>
 						<h1 className={"navbar-title"}>stream.</h1>
+						<Link to='/categories'>Kategorien</Link>
+						<Link to='/recommended'>Empfohlen</Link>
+						<Link to='/archive'>Archiv</Link>
+						<Link to='/stations'>Sender</Link>
 						<MuiSwitch></MuiSwitch>
-						<IconButton onClick={() => this.onSearchClicked()} color="primary" aria-label="upload picture" component="span">
+						<IconButton onClick={() => this.onSearchClicked()} color="primary" component="span">
 							<Icon>search</Icon>
 						</IconButton>
 					</Toolbar>
