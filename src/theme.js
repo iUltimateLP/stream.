@@ -26,7 +26,7 @@ const lightTheme = createMuiTheme({
 	  		main: red.A400,
 		},
 		background: {
-	  		default: '#fff',
+	  		default: '#F3F3F3',
 		}
   	},
 });
@@ -45,7 +45,7 @@ const darkTheme = createMuiTheme({
 	  		main: red.A400,
 		},
 		background: {
-	  		default: '#000',
+	  		default: '#212121',
 		},
   	},
 });

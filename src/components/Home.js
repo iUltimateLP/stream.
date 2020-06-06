@@ -10,9 +10,12 @@
 */
 
 import React from 'react'
+import { Typography, Container, Button } from '@material-ui/core'
 
 const Home = () => (
-    <h1>stream.</h1>
+    <Container align="center">
+		
+    </Container>
 )
 
 export default Home;

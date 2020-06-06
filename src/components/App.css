@@ -9,4 +9,19 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+.navbar-title {
+	font-family: "Futura";
+	font-weight: bold;
+	text-rendering: optimizeLegibility;
+	flex-grow: 1;
+}
 
+.navbar-search-textfield {
+	padding-top: 16px !important;
+	width: 100%;
+	border: none !important;
+}
+
+.navbar-search-textfield::before {
+	border: none !important;
+}
