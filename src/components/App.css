@@ -9,6 +9,10 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+body {
+	overflow-x: hidden;
+}
+
 .navbar>a[href] {
 	font-family: "Futura";
 	font-weight: bold;
@@ -21,7 +25,14 @@
 	font-family: "Futura";
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
-	flex-grow: 1;
+}
+
+.navbar-search {
+	position: absolute !important;
+    z-index: 10;
+	background-color: #FFFFFF;
+	width: 100%;
+	z-index: 10000;
 }
 
 .navbar-search-textfield {
@@ -32,4 +43,63 @@
 
 .navbar-search-textfield::before {
 	border: none !important;
+}
+
+.showcase-carousel {
+	height: calc(100vh - 64px); /* Navbar is 64px */
+}
+
+.showcase-carousel>.CarouselItem, .showcase-carousel>.CarouselItem>div {
+	height: 100%;
+}
+
+.showcase-wrapper {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.showcase-image {
+	position: absolute;
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.showcase-texts {
+	position: absolute;
+	margin-top: calc(25% - 64px);
+	margin-left: 64px;
+}
+
+.showcase-texts>h1 {
+	font-family: "Futura";
+	font-weight: bold;
+	font-size: 36pt;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+.showcase-texts>h4 {
+	font-size: 18pt;
+	color: white;
+	margin: 0;
+	padding: 0;
+	font-weight: thin;
+}
+
+.filter-bar {
+	background-color: white;
+}
+
+.filter-bar>a[href] {
+	font-family: "Futura";
+	font-weight: bold;
+	padding-right: 36px;
+	text-decoration: none;
+	color: black;
 }

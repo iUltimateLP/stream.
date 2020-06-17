@@ -87,12 +87,14 @@ class Main extends React.Component {
 			<main>
 				<AppBar color="inherit">
 					<Toolbar className={"navbar"}>
-						<h1 className={"navbar-title"}>stream.</h1>
+						<Link to='/' style={{"flexGrow": 1}}><h1 className={"navbar-title"}>stream.</h1></Link>
 						<Link to='/categories'>Kategorien</Link>
 						<Link to='/recommended'>Empfohlen</Link>
 						<Link to='/archive'>Archiv</Link>
 						<Link to='/stations'>Sender</Link>
+						<Icon>headset</Icon>
 						<MuiSwitch></MuiSwitch>
+						<Icon style={{"marginRight": "12px"}}>play_arrow</Icon>
 						<IconButton onClick={() => this.onSearchClicked()} color="primary" component="span">
 							<Icon>search</Icon>
 						</IconButton>
