@@ -1,0 +1,28 @@
+/*
+	 	   _                                         
+	 ___  | |_   _ __    ___    __ _   _ __ ___      
+	/ __| | __| | '__|  / _ \  / _` | | '_ ` _ \     
+	\__ \ | |_  | |    |  __/ | (_| | | | | | | |  _ 
+	|___/  \__| |_|     \___|  \__,_| |_| |_| |_| (_)
+													
+	Created by David Bollmann and Jonathan Verbeek (jverbeek.de)
+	Hochschule Bremen City University of Applied Sciences
+*/
+
+@font-face {
+    font-family: Futura;
+    font-weight: bold;
+    src: url(Futura-Bold.ttf);
+}
+
+@font-face {
+    font-family: Helvetica;
+    font-weight: lighter;
+    src: url(Helvetica-Light.ttf);
+}
+
+@font-face {
+    font-family: Helvetica;
+    font-weight: bold;
+    src: url(Helvetica-Bold.ttf);
+}
