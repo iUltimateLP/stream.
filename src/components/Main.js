@@ -22,6 +22,7 @@ import Zoom from '@material-ui/core/Zoom';
 import { IconButton, TextField } from '@material-ui/core';
 import MuiSwitch from '@material-ui/core/Switch';
 import Home from './Home';
+import Watch from './Watch';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -106,6 +107,7 @@ class Main extends React.Component {
 				</Toolbar>}
 				<Switch>
 					<Route exact path='/' component={Home}/>
+					<Route path='/watch/:id' component={Watch}/>
 				</Switch>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">

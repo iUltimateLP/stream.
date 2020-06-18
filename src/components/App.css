@@ -130,6 +130,15 @@ section:first-of-type {
 	grid-auto-flow: column;
 	column-gap: 128px;
 	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.media-scroller>a {
+	text-decoration: none;
+}
+
+.media-scroller::-webkit-scrollbar {
+	display: none;
 }
 
 .media-scroller:before, .media-scroller:after {
@@ -144,10 +153,28 @@ section:first-of-type {
 	background-color: white;
 }
 
-.media-tile-cover {
+.media-tile:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+.media-tile-cover-wrapper {
     width: 100%;
-    height: 78%;
-    background-repeat: no-repeat;
+	height: 78%;
+	overflow: hidden;
+}
+
+.media-tile-cover {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	transition: 0.05s linear transform;
+}
+
+.media-tile:hover>.media-tile-cover-wrapper>.media-tile-cover {
+	transform: scale(1.1);
 }
 
 .media-tile>h1 {

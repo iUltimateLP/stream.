@@ -11,13 +11,18 @@
 
 import React from 'react'
 import { Typography, Container, Button, Card, CardContent, CardActions, Grid } from '@material-ui/core'
+import { Switch, Route, Link } from 'react-router-dom';
 
 const MediaCard = (props) => (
-    <div className={"media-tile"}>
-        <div className={"media-tile-cover"} style={{"backgroundImage": "url(\"" + props.item.thumbnail + "\")"}}/>
-        <h1>{props.item.title}</h1>
-        <h4>{props.item.station}</h4>
-    </div>
+    <Link to={`/watch/${props.item.id}`}>
+        <div className={"media-tile"}>
+            <div className={"media-tile-cover-wrapper"}>
+                <div className={"media-tile-cover"} style={{"backgroundImage": "url(\"" + props.item.thumbnail + "\")"}}/>
+            </div>
+            <h1>{props.item.title}</h1>
+            <h4>{props.item.station}</h4>
+        </div>
+    </Link>
 )
 
 export default MediaCard;
