@@ -117,12 +117,46 @@ section:first-of-type {
 	top: calc(100vh + calc(77px - 64px));
 }
 
-.filter-bar>a[href] {
+.filter-bar>a {
 	font-family: "Futura";
 	font-weight: bold;
 	padding-right: 36px;
 	text-decoration: none;
 	color: black;
+	cursor: pointer;
+}
+
+.filter-bar-extended {
+	position: absolute !important;
+	width: 100%;
+	top: calc(100vh + calc(77px - 64px) + 64px);
+	background-color: white;
+}
+
+.filter-list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 64px;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+.filter-list>div {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter-list>div>h1 {
+	font-family: Helvetica;
+	color: #555;
+	margin: 0;
+}
+
+.filter-list>div>a {
+	font-family: Helvetica;
+	font-size: 12pt;
+	padding-top: 12px;
+	cursor: pointer;
 }
 
 .media-scroller {
@@ -197,6 +231,17 @@ section:first-of-type {
 	padding: 0;
 	padding-left: 16px;
 	padding-right: 16px;
+}
+
+.deco-circle {
+	position: absolute;
+	height: 512px;
+    width: 512px;
+	z-index: -1;
+}
+
+.deco-circle.right {
+	right: 0;
 }
 
 ::-webkit-scrollbar

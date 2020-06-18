@@ -55,7 +55,8 @@ class Home extends React.Component {
 				image: "https://mediafiles.mein-haustier.de/wp-content/uploads/2018/04/Collie-Hund-auf-der-Suche-auf-der-gr%C3%BCnen-Wiese-im-Sonnenlicht-iStock-847292246-1270x608.jpg",
 				title: "Die Collies",
 				description: "Folge 24: Rico spielt Ball (erneut)"
-			}]
+			}],
+			filterBarOpen: false
 		};
 	}
 
@@ -73,18 +74,59 @@ class Home extends React.Component {
 				</section>
 				<section className={"media-container"}> {/*Grid container spacing={2} justify="center"*/}
 					<Toolbar className={"filter-bar"}>
-						<a href="#"><Icon>filter_alt</Icon></a> {/*arrow_back_ios*/}
-						<a href="#">Aktuell</a>
-						<a href="#">Podcast</a>
-						<a href="#">Interview</a>
-						<a href="#">Doku</a>
-						<a href="#">Wissen</a>
+						<a onClick={() => this.setState({filterBarOpen: !this.state.filterBarOpen})}>
+							{this.state.filterBarOpen && <Icon>arrow_back_ios</Icon>}
+							{!this.state.filterBarOpen && <Icon>filter_alt</Icon>}
+						</a>
+						<a>Aktuell</a>
+						<a>Podcast</a>
+						<a>Interview</a>
+						<a>Doku</a>
+						<a>Wissen</a>
 					</Toolbar>
+					{this.state.filterBarOpen && <Toolbar className={"filter-bar-extended"}>
+						<div className={"filter-list"}>
+							<div>
+								<h1>Uploaddatum</h1>
+								<a>Letzte Stunde</a>
+								<a>Heute</a>
+								<a>Diese Woche</a>
+								<a>Diesen Monat</a>
+								<a>Dieses Jahr</a>
+							</div>
+							<div>
+								<h1>Dauer</h1>
+								<a>Kurz (&lt; 5 Min.)</a>
+								<a>Mittel (&lt; 10 Min.)</a>
+								<a>Lang (&lt; 30 Min.)</a>
+							</div>
+							<div>
+								<h1>Sender</h1>
+								<a>Bremen Eins</a>
+								<a>Bremen Zwei</a>
+								<a>Bremen Vier</a>
+								<a>Bremen NEXT</a>
+								<a>buten un binnen</a>
+							</div>
+							<div>
+								<h1>Sortieren nach</h1>
+								<a>Relevanz</a>
+								<a>Uploaddatum</a>
+								<a>Anzahl der Aufrufe</a>
+							</div>
+						</div>
+					</Toolbar>}
 					<div className={"media-scroller"}>
 						{this.state.media.map((value) => (
 							<MediaCard key={value.id} item={value}/>
 						))}
 					</div>
+					<svg className={"deco-circle right"} style={{"transform": "translateX(50%)", "marginBottom": "0"}} viewBox="0 0 1024 1024">
+						<circle style={{"fill": "#00E676"}} cx="511.5" cy="511.5" r="512"/>
+					</svg>
+					<svg className={"deco-circle"} style={{"transform": "translateX(-50%) translateY(50%)", "marginBottom": "-50%"}} viewBox="0 0 1024 1024">
+						<circle style={{"fill": "#7C4DFF"}} cx="511.5" cy="511.5" r="512"/>
+					</svg>
 				</section>
 			</div>
 		);
