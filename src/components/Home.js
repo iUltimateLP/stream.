@@ -23,27 +23,27 @@ class Home extends React.Component {
 				id: 1,
 				title: "Test Item 1",
 				station: "Bremen Vier",
-				thumbnail: ""
+				thumbnail: "assets/img/content_placeholder.png"
 			}, {
 				id: 2,
 				title: "Test Item 2",
 				station: "Bremen Vier",
-				thumbnail: ""
+				thumbnail: "assets/img/content_placeholder.png"
 			}, {
 				id: 3,
 				title: "Test Item 3",
 				station: "Bremen Vier",
-				thumbnail: ""
+				thumbnail: "assets/img/content_placeholder.png"
 			}, {
 				id: 4,
 				title: "Test Item 4",
 				station: "Bremen Vier",
-				thumbnail: ""
+				thumbnail: "assets/img/content_placeholder.png"
 			}, {
 				id: 5,
 				title: "Test Item 5",
 				station: "Bremen Vier",
-				thumbnail: ""
+				thumbnail: "assets/img/content_placeholder.png"
 			}],
 			showcase: [{
 				id: 1,
@@ -62,26 +62,30 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div>
-				<Carousel className={"showcase-carousel"} animation="slide" indicators={false} interval={5000}>
-					{
-						this.state.showcase.map((value) => (
-							<ShowcaseItem key={value.id} item={value}/>
-						))
-					}
-				</Carousel>
-				<Toolbar className={"filter-bar"}>
-					<a href="#"><Icon>filter_alt</Icon></a> {/*arrow_back_ios*/}
-					<a href="#">Aktuell</a>
-					<a href="#">Podcast</a>
-					<a href="#">Interview</a>
-					<a href="#">Doku</a>
-					<a href="#">Wissen</a>
-				</Toolbar>
-				<Grid container spacing={2} justify="center">
-					{this.state.media.map((value) => (
-						<MediaCard key={value.id} item={value}/>
-					))}
-				</Grid>
+				<section>
+					<Carousel className={"showcase-carousel"} animation="slide" indicators={false} interval={5000}>
+						{
+							this.state.showcase.map((value) => (
+								<ShowcaseItem key={value.id} item={value}/>
+							))
+						}
+					</Carousel>
+				</section>
+				<section className={"media-container"}> {/*Grid container spacing={2} justify="center"*/}
+					<Toolbar className={"filter-bar"}>
+						<a href="#"><Icon>filter_alt</Icon></a> {/*arrow_back_ios*/}
+						<a href="#">Aktuell</a>
+						<a href="#">Podcast</a>
+						<a href="#">Interview</a>
+						<a href="#">Doku</a>
+						<a href="#">Wissen</a>
+					</Toolbar>
+					<div className={"media-scroller"}>
+						{this.state.media.map((value) => (
+							<MediaCard key={value.id} item={value}/>
+						))}
+					</div>
+				</section>
 			</div>
 		);
 	}
@@ -90,7 +94,7 @@ class Home extends React.Component {
 function ShowcaseItem(props) {
 	return (
 		<div className={"showcase-wrapper"}>
-			<img className={"showcase-image"} src={props.item.image} />
+			<div className={"showcase-image"} style={{"backgroundImage": "url(\"" + props.item.image + "\")"}} />
 			<div className={"showcase-texts"}>
 				<h1>{props.item.title}</h1>
 				<h4>{props.item.description}</h4>

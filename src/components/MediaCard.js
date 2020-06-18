@@ -12,17 +12,12 @@
 import React from 'react'
 import { Typography, Container, Button, Card, CardContent, CardActions, Grid } from '@material-ui/core'
 
-const MediaCard = () => (
-    <Grid item xs={4}>
-        <Card>
-            <CardContent>
-                <Typography variant="h5">ABC</Typography>
-            </CardContent>
-            <CardActions>
-
-            </CardActions>
-        </Card>
-    </Grid>
+const MediaCard = (props) => (
+    <div className={"media-tile"}>
+        <div className={"media-tile-cover"} style={{"backgroundImage": "url(\"" + props.item.thumbnail + "\")"}}/>
+        <h1>{props.item.title}</h1>
+        <h4>{props.item.station}</h4>
+    </div>
 )
 
 export default MediaCard;

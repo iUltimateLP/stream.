@@ -12,17 +12,17 @@
 @font-face {
     font-family: Futura;
     font-weight: bold;
-    src: url(Futura-Bold.ttf);
+    src: url(Futura-Bold.woff2);
 }
 
 @font-face {
     font-family: Helvetica;
     font-weight: lighter;
-    src: url(Helvetica-Light.ttf);
+    src: url(Helvetica-Light.woff2);
 }
 
 @font-face {
     font-family: Helvetica;
     font-weight: bold;
-    src: url(Helvetica-Bold.ttf);
+    src: url(Helvetica-Bold.woff2);
 }
