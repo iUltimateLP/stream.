@@ -9,14 +9,18 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+// App.js: The entry React module to render the whole web app
+
 import React from 'react';
 import './App.css';
 import Main from "./Main";
 
-function App() {
-    return (
-        <Main />
-    );
+class App extends React.Component {
+	render() {
+		return (
+			<Main />
+		);
+	}
 }
 
 export default App;

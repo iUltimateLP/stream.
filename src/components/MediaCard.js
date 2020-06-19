@@ -9,8 +9,10 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+// MediaCard.js: Represents a reusable media card React component which is clickable to redirect to
+//               the player of the content the media card is responsible for.
+
 import React from 'react'
-import { Typography, Container, Button, Card, CardContent, CardActions, Grid } from '@material-ui/core'
 import { Switch, Route, Link } from 'react-router-dom';
 
 const MediaCard = (props) => (

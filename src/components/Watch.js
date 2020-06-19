@@ -9,6 +9,8 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+// Watch.js: Player component for videos
+
 import React from 'react';
 
 class Watch extends React.Component {

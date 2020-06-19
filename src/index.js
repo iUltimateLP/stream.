@@ -9,6 +9,9 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+// index.js: The very very first script which gets executed. Sets up react, and renders the App component
+//           on the app-root DOM element.
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
