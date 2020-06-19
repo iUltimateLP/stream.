@@ -169,7 +169,7 @@ section:first-of-type {
 	overflow-y: hidden;
 }
 
-.media-scroller>a {
+.media-scroller>a, .selected-grid>a {
 	text-decoration: none;
 }
 
@@ -183,11 +183,20 @@ section:first-of-type {
 }
 
 .media-tile {
+	background-color: white;
+	z-index: 1;
+}
+
+.media-tile.dvd {
 	/* TODO */
 	height: 640px;
 	width: 320px;
-	background-color: white;
-	z-index: 1;
+}
+
+.media-tile.small {
+	/* TODO */
+	height: 320px;
+	width: 480px;
 }
 
 .media-tile:hover {
@@ -246,6 +255,35 @@ section:first-of-type {
 
 .deco-circle.right {
 	right: 0;
+}
+
+.selected-container {
+	padding-top: calc(77px - 64px);
+	padding: 32px;
+}
+
+.selected-container>h1 {
+	font-family: Futura;
+	font-weight: bold;
+	font-size: 48pt;
+	margin-top: 32px;
+	margin-bottom: 0;
+}
+
+.selected-grid {
+	display: flex;
+	align-items: center;
+}
+
+.selected-scroller {
+	padding-left: 64px;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-auto-flow: column;
+	column-gap: 64px;
+	row-gap: 64px;
+	overflow-x: scroll;
+	overflow-y: hidden;	
 }
 
 ::-webkit-scrollbar

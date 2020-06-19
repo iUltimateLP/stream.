@@ -15,38 +15,13 @@
 import React from 'react'
 import { Container, Grid, Paper, Toolbar, Link, Icon } from '@material-ui/core'
 import MediaCard from './MediaCard';
+import FakeAPI from './../FakeAPI';
 
 class Feed extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            media: [{
-				id: 1,
-				title: "Test Item 1",
-				station: "Bremen Vier",
-				thumbnail: "assets/img/content_placeholder.png"
-			}, {
-				id: 2,
-				title: "Test Item 2",
-				station: "Bremen Vier",
-				thumbnail: "assets/img/content_placeholder.png"
-			}, {
-				id: 3,
-				title: "Test Item 3",
-				station: "Bremen Vier",
-				thumbnail: "assets/img/content_placeholder.png"
-			}, {
-				id: 4,
-				title: "Test Item 4",
-				station: "Bremen Vier",
-				thumbnail: "assets/img/content_placeholder.png"
-			}, {
-				id: 5,
-				title: "Test Item 5",
-				station: "Bremen Vier",
-				thumbnail: "assets/img/content_placeholder.png"
-            }],
             filterBarOpen: false
         }
     }
@@ -98,14 +73,14 @@ class Feed extends React.Component {
                     </div>
                 </Toolbar>}
                 <div className={"media-scroller"}>
-                    {this.state.media.map((value) => (
-                        <MediaCard key={value.id} item={value}/>
+                    {FakeAPI.getMedia().map((value) => (
+                        <MediaCard key={value.id} item={value} type={"dvd"}/>
                     ))}
                 </div>
                 <svg className={"deco-circle right"} style={{"transform": "translateX(50%)", "marginBottom": "0"}} viewBox="0 0 1024 1024">
                     <circle style={{"fill": "#00E676"}} cx="511.5" cy="511.5" r="512"/>
                 </svg>
-                <svg className={"deco-circle"} style={{"transform": "translateX(-50%) translateY(50%)", "marginBottom": "-50%"}} viewBox="0 0 1024 1024">
+                <svg className={"deco-circle"} style={{"transform": "translateX(-50%) translateY(75%)", "marginBottom": "-75%"}} viewBox="0 0 1024 1024">
                     <circle style={{"fill": "#7C4DFF"}} cx="511.5" cy="511.5" r="512"/>
                 </svg>
             </section>

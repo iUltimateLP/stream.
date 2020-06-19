@@ -15,17 +15,30 @@
 import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom';
 
-const MediaCard = (props) => (
-    <Link to={`/watch/${props.item.id}`}>
-        <div className={"media-tile"}>
-            <div className={"media-tile-cover-wrapper"}>
-                <div className={"media-tile-cover"} style={{"backgroundImage": "url(\"" + props.item.thumbnail + "\")"}}/>
-            </div>
-            <h1>{props.item.title}</h1>
-            <h4>{props.item.station}</h4>
-        </div>
-    </Link>
-)
+class MediaCard extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            item: props.item,
+            type: props.type
+        }
+    }
+
+    render() {
+        return (
+            <Link to={`/watch/${this.state.item.id}`}>
+                <div className={"media-tile " + this.state.type}>
+                    <div className={"media-tile-cover-wrapper"}>
+                        <div className={"media-tile-cover"} style={{"backgroundImage": "url(\"" + this.state.item.thumbnail + "\")"}}/>
+                    </div>
+                    <h1>{this.state.item.title}</h1>
+                    <h4>{this.state.item.station}</h4>
+                </div>
+            </Link>
+        );
+    }
+}
 
 export default MediaCard;
 

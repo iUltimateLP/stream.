@@ -15,6 +15,7 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import Feed from './Feed';
+import Selected from './Selected';
 
 function ShowcaseItem(props) {
 	return (
@@ -60,6 +61,18 @@ class Home extends React.Component {
 					</Carousel>
 				</section>
 				<Feed/>
+				<Selected type={"recommended"}/>
+				<svg className={"deco-circle right"} style={{"transform": "translateX(50%) translateY(-25%)", "marginBottom": "25%"}} viewBox="0 0 1024 1024">
+                    <circle style={{"fill": "#FFEB3B"}} cx="511.5" cy="511.5" r="512"/>
+                </svg>
+				<Selected type={"favourite"}/>
+				<svg className={"deco-circle"} style={{"transform": "translateX(25%) translateY(-10%)", "marginBottom": "-10%"}} viewBox="0 0 1024 1024">
+                    <circle style={{"fill": "#009688"}} cx="511.5" cy="511.5" r="256"/>
+                </svg>
+				<Selected type={"archive"}/>
+				<svg className={"deco-circle right"} style={{"transform": "translateX(50%) translateY(-15%)", "marginBottom": "-15%"}} viewBox="0 0 1024 1024">
+                    <circle style={{"fill": "#FF5722"}} cx="511.5" cy="511.5" r="512"/>
+                </svg>
 			</div>
 		);
 	}

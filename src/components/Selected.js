@@ -14,18 +14,44 @@
 //              handled the same.
 
 import React from 'react'
-import { Container, Grid, Paper, Toolbar, Link, Icon } from '@material-ui/core'
+import { Container, Grid, Paper, Toolbar, Link, Icon, GridList } from '@material-ui/core'
 import MediaCard from './MediaCard';
+import FakeAPI from './../FakeAPI';
 
 class Selected extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            type: props.type // Can be "recommended", "favourite" or "archive"
+        };
+    }
+
+    getHeading() {
+        switch (this.state.type) {
+            case "recommended":
+                return "Empfohlen";
+            case "favourite":
+                return "Favoriten";
+            case "archive":
+                return "Archiv";
+            default:
+                return "Invalid type";
+        }
     }
 
     render() {
         return (
-            <section>
-
+            <section className={"selected-container"}>
+                <h1>{this.getHeading()}</h1>
+                <div className={"selected-grid"}>
+                    <MediaCard item={FakeAPI.getMedia()[0]} type={"dvd"}/>
+                    <div className={"selected-scroller"}>
+                        {FakeAPI.getMedia().map((value) => (
+                            <MediaCard key={value.id} item={value} type={"small"}/>
+                        ))}
+                    </div>
+                </div>
             </section>
         );
     }
