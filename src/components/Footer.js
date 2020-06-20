@@ -9,6 +9,8 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+// Footer.js: The footer for the web page
+
 import React from 'react'
 
 class Footer extends React.Component {

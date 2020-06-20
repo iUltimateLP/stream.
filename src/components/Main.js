@@ -14,16 +14,12 @@
 
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import Icon from '@material-ui/core/Icon';
 import Zoom from '@material-ui/core/Zoom';
-import { IconButton, TextField } from '@material-ui/core';
-import MuiSwitch from '@material-ui/core/Switch';
+import Navbar from './Navbar';
 import Home from './Home';
 import Watch from './Watch';
 
@@ -67,43 +63,12 @@ function ScrollTop(props) {
 class Main extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			searchBarOpen: false
-		};
-
-		this.onSearchClicked.bind(this);
-	}
-
-	onSearchClicked() {
-		this.setState({
-			searchBarOpen: !this.state.searchBarOpen
-		});
 	}
 
 	render() {
 		return (
 			<main>
-				<AppBar color="inherit">
-					<Toolbar className={"navbar"}>
-						<Link to='/' style={{"flexGrow": 1}}><h1 className={"navbar-title"}>stream.</h1></Link>
-						<a href='#feed'>Kategorien</a>
-						<a href='#recommended'>Empfohlen</a>
-						<a href='#favourite'>Favoriten</a>
-						<a href='#archive'>Archiv</a>
-						<a href='/stations'>Sender</a>
-						<Icon>headset</Icon>
-						<MuiSwitch></MuiSwitch>
-						<Icon style={{"marginRight": "12px"}}>play_arrow</Icon>
-						<IconButton onClick={() => this.onSearchClicked()} color="primary" component="span">
-							<Icon>search</Icon>
-						</IconButton>
-					</Toolbar>
-				</AppBar>
-				<Toolbar id="back-to-top-anchor" />
-				{this.state.searchBarOpen && <Toolbar className={"navbar-search"}>
-					<TextField className={"navbar-search-textfield"} placeholder="Enter search text" />
-				</Toolbar>}
+				<Navbar/>
 				<Switch>
 					<Route exact path='/' component={Home}/>
 					<Route path='/watch/:id' component={Watch}/>
