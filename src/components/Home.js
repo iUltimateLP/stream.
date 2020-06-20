@@ -16,6 +16,7 @@ import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import Feed from './Feed';
 import Selected from './Selected';
+import Footer from './Footer';
 
 function ShowcaseItem(props) {
 	return (
@@ -70,9 +71,10 @@ class Home extends React.Component {
                     <circle style={{"fill": "#009688"}} cx="511.5" cy="511.5" r="256"/>
                 </svg>
 				<Selected type={"archive"}/>
-				<svg className={"deco-circle right"} style={{"transform": "translateX(50%) translateY(-15%)", "marginBottom": "-15%"}} viewBox="0 0 1024 1024">
+				<svg className={"deco-circle right"} style={{"transform": "translateX(50%) translateY(-15%)", "marginBottom": "-30%", "zIndex": "1"}} viewBox="0 0 1024 1024">
                     <circle style={{"fill": "#FF5722"}} cx="511.5" cy="511.5" r="512"/>
                 </svg>
+				<Footer/>
 			</div>
 		);
 	}

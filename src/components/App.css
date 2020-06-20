@@ -169,7 +169,7 @@ section:first-of-type {
 	overflow-y: hidden;
 }
 
-.media-scroller>a, .selected-grid>a {
+.media-scroller>a, .selected-scroller>a, .selected-grid>a {
 	text-decoration: none;
 }
 
@@ -250,7 +250,7 @@ section:first-of-type {
 	position: absolute;
 	height: 512px;
     width: 512px;
-	z-index: -1;
+	z-index: -10;
 }
 
 .deco-circle.right {
@@ -284,6 +284,50 @@ section:first-of-type {
 	row-gap: 64px;
 	overflow-x: scroll;
 	overflow-y: hidden;	
+}
+
+.footer {
+	background-color: #272727;
+	padding: 36px;
+	padding-bottom: 96px;
+}
+
+.footer-grid {
+	display: flex;
+	flex-direction: row;
+}
+
+.footer-grid>.rb-logo {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-grid>.rb-logo>div {
+	padding-top: 12px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.footer-grid>.rb-logo>div>a {
+	color: white;
+	font-size: 18pt;
+	justify-self: center;
+}
+
+.footer-grid>.rb-logo>img {
+	height: 28px;
+}
+
+.footer-grid>div {
+	padding-right: 64px;
+}
+
+.footer-grid>div>a {
+	font-family: Futura;
+	font-weight: bold;
+	font-size: 14pt;
+	text-decoration: none;
+	color: white;
 }
 
 ::-webkit-scrollbar
