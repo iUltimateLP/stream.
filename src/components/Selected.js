@@ -42,7 +42,7 @@ class Selected extends React.Component {
 
     render() {
         return (
-            <section className={"selected-container"}>
+            <section id={this.state.type} className={"selected-container"}>
                 <h1>{this.getHeading()}</h1>
                 <div className={"selected-grid"}>
                     <MediaCard item={FakeAPI.getMedia()[0]} type={"dvd"}/>

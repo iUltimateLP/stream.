@@ -28,7 +28,7 @@ class Feed extends React.Component {
 
     render() {
         return (
-            <section className={"media-container"}> {/*Grid container spacing={2} justify="center"*/}
+            <section id={"feed"} className={"media-container"}> {/*Grid container spacing={2} justify="center"*/}
                 <Toolbar className={"filter-bar"}>
                     <a onClick={() => this.setState({filterBarOpen: !this.state.filterBarOpen})}>
                         {this.state.filterBarOpen && <Icon>arrow_back_ios</Icon>}

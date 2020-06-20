@@ -9,6 +9,11 @@
 	Hochschule Bremen City University of Applied Sciences
 */
 
+:root {
+	scroll-behavior: smooth;
+	scroll-padding-top: 64px;
+}
+
 body {
 	overflow-x: hidden;
 }
