@@ -278,6 +278,9 @@ section:first-of-type {
 .selected-grid {
 	display: flex;
 	align-items: center;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	padding-left: 64px;
 }
 
 .selected-scroller {
@@ -287,8 +290,6 @@ section:first-of-type {
 	grid-auto-flow: column;
 	column-gap: 64px;
 	row-gap: 64px;
-	overflow-x: scroll;
-	overflow-y: hidden;	
 }
 
 .footer {
@@ -333,6 +334,82 @@ section:first-of-type {
 	font-size: 14pt;
 	text-decoration: none;
 	color: white;
+}
+
+.video-player {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+}
+
+.video-info {
+	padding: 64px;
+}
+
+.video-info>h1 {
+	font-family: Futura;
+	font-weight: bold;
+	font-size: 32pt;
+	margin: 0;
+}
+
+.video-subtitle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.video-subtitle>h2 {
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 26pt;
+	color: #777;
+	margin: 0;
+}
+
+.video-subtitle>p {
+	font-family: Helvetica;
+	font-size: 14pt;
+	margin: 0;
+	padding-left: 12px;
+	color: #aaa;
+}
+
+.video-info>p {
+	font-family: Helvetica;
+	font-size: 12pt;
+}
+
+.video-info>.share-container {
+	display: flex;
+}
+
+.video-info>.share-container>a {
+	color: #777;
+	text-decoration: none;
+	font-size: 24pt;
+	margin-right: 24px;
+}
+
+.actors-container {
+	display: flex;
+	flex-direction: row;
+	padding-top: 16px;
+}
+
+.actors-container>.actor {
+	display: flex;
+	width: 64px;
+	height: 64px;
+	background-color: #dadada;
+	margin-right: 16px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	font-family: Helvetica;
+	font-size: 16pt;
+	color: #777;
+	-webkit-user-select: none;
 }
 
 ::-webkit-scrollbar

@@ -33,7 +33,11 @@ class Navbar extends React.Component {
     onSearchClicked() {
 		this.setState({
 			searchBarOpen: !this.state.searchBarOpen
-		});
+        });
+
+        if (this.state.searchBarOpen) {
+            document.getElementById("search-textbox").focus();
+        }
     }
 
     render() {
@@ -57,7 +61,7 @@ class Navbar extends React.Component {
                 </AppBar>
                 <Toolbar id="back-to-top-anchor" />
                 {this.state.searchBarOpen && <Toolbar className={"navbar-search"}>
-                    <TextField className={"navbar-search-textfield"} placeholder="Enter search text" />
+                    <TextField id={"search-textbox"} className={"navbar-search-textfield"} placeholder="Enter search text" />
                 </Toolbar>}
             </div>
         );
