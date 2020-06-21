@@ -18,16 +18,23 @@ import { Switch, Route, Link } from 'react-router-dom';
 import Icon from '@material-ui/core/Icon';
 import { IconButton, TextField } from '@material-ui/core';
 import MuiSwitch from '@material-ui/core/Switch';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import FakeAPI from './../FakeAPI';
 
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            searchBarOpen: false
+            searchBarOpen: false,
+            stationsMenuOpen: false,
+            stationsAnchor: null
         }
 
-		this.onSearchClicked.bind(this);
+        this.onSearchClicked.bind(this);
+        this.showStationsMenu.bind(this);
+        this.hideStationsMenu.bind(this);
     }
 
     onSearchClicked() {
@@ -40,6 +47,18 @@ class Navbar extends React.Component {
         }
     }
 
+    showStationsMenu() {
+        this.setState({
+            stationsAnchor: document.getElementById("stations-link")
+        })
+    }
+
+    hideStationsMenu() {
+        this.setState({
+            stationsAnchor: null
+        });
+    }
+
     render() {
         return (
             <div>
@@ -50,7 +69,14 @@ class Navbar extends React.Component {
                         <a href='#recommended'>Empfohlen</a>
                         <a href='#favourite'>Favoriten</a>
                         <a href='#archive'>Archiv</a>
-                        <a href='/stations'>Sender</a>
+                        <a href="#" id="stations-link" aria-controls="simple-menu" aria-haspopup="true" onClick={() => this.showStationsMenu()}>Sender</a>
+                        <Menu id="simple-menu" anchorEl={this.state.stationsAnchor} keepMounted open={Boolean(this.state.stationsAnchor)} onClose={() => this.hideStationsMenu()}>
+                            {
+                                FakeAPI.getStations().map((station) => (
+                                    <MenuItem key={station.id}><Link to={"/station/" + station.id}>{station.name}</Link></MenuItem>
+                                ))
+                            }
+                        </Menu>
                         <Icon>headset</Icon>
                         <MuiSwitch></MuiSwitch>
                         <Icon style={{"marginRight": "12px"}}>play_arrow</Icon>

@@ -55,7 +55,7 @@ fakeAPI.media = [{
     id: 1,
     type: "video",
     title: "Freiraum",
-    station: "Bremen Zwei",
+    station: 2,
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
@@ -65,7 +65,7 @@ fakeAPI.media = [{
     id: 2,
     type: "video",
     title: "Mare Radio",
-    station: "Bremen Zwei",
+    station: 2,
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
@@ -75,7 +75,7 @@ fakeAPI.media = [{
     id: 3,
     type: "video",
     title: "KL",
-    station: "Bremen Zwei",
+    station: 2,
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
@@ -85,7 +85,7 @@ fakeAPI.media = [{
     id: 4,
     type: "video",
     title: "REWIND",
-    station: "Bremen NEXT",
+    station: 4,
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
@@ -95,7 +95,7 @@ fakeAPI.media = [{
     id: 5,
     type: "video",
     title: "Alles Tatami",
-    station: "Bremen Zwei",
+    station: 2,
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
@@ -105,7 +105,7 @@ fakeAPI.media = [{
     id: 6,
     type: "audio",
     title: "Audio Item",
-    station: "Bremen Zwei",
+    station: 2,
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
@@ -115,13 +115,58 @@ fakeAPI.media = [{
     id: 7,
     type: "audio",
     title: "Audio Item 2",
-    station: "Bremen Zwei",
+    station: 2,
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
     thumbnail: "assets/img/content_4.png",
     source: "path/to/source.mp3"
 },];
+
+// All stations the platform should support
+fakeAPI.stations = [{
+    id: 1,
+    name: "Bremen Eins",
+    color: "#00E676",
+    logo: "/assets/img/stations/bremen_eins_light.svg",
+    description: "Radio für Bremen, Bremerhaven und die Region. Mit den schönsten Oldies und den größten Hits aller Zeiten. Informativ und unterhaltsam, aktuell und hintergründig, regional und weltoffen, kompetent und nützlich, frisch und freundlich, ehrlich und lebensnah."
+}, {
+    id: 2,
+    name: "Bremen Zwei",
+    color: "#47418C",
+    logo: "/assets/img/stations/bremen_zwei_light.svg",
+    description: "Bremen Zwei, ein Programm von Radio Bremen, richtet sich an alle Freunde des informativen Kulturradios und der angenehmen, anspruchsvollen Musik."
+}, {
+    id: 3,
+    name: "Bremen Vier",
+    color: "#FFEB3B",
+    logo: "/assets/img/stations/bremen_vier_light.svg",
+    description: "Hier seid ihr ganz nah dran an Bremen Vier. Ihr wollt wissen, welche Dinge unsere Moderatoren mal lieber sein gelassen hätten? Ihr kennt ein cooles Event bei dem wir unbedingt einmal rumkommen müssen oder wollt selbst gerne einmal Radioluft schnuppern? Wie das alles geht und noch mehr findet ihr auf dieser Seite heraus."
+}, {
+    id: 4,
+    name: "Bremen NEXT",
+    color: "#03B1AB",
+    logo: "/assets/img/stations/bremen_next_light.svg",
+    description: "Bremen NEXT – das ist Musik und Lifestyle aus deiner Stadt. Wir bringen euch Black, Urban, Hip Hop und Electro im Radio auf 96,7 MHz in Bremen, auf 92,1 MHz in Bremerhaven und als Livestream im Netz und im Digitalradio. Wir sind für euch mit Kamera und Mic da, wo was geht – in Bremen, Bremerhaven und in der Welt. Bremen NEXT – ein Programm von Radio Bremen."
+}, {
+    id: 5,
+    name: "Buten un Binnen",
+    color: "#FF5722",
+    logo: "/assets/img/stations/buten_un_binnen_light.svg",
+    description: "buten un binnen ist das Regionalmagazin für Bremen, Bremerhaven und umzu im Internet und jeden Abend um 19:30 Uhr im Radio Bremen Fernsehen."
+}];
+
+// Returns all stations
+fakeAPI.getStations = function() {
+    return fakeAPI.stations;
+}
+
+// Returns a station for a specified ID
+fakeAPI.fetchStation = function(id) {
+    return fakeAPI.stations.find((elem) => {
+        return elem.id == id;
+    })
+}
 
 // Returns all media items
 fakeAPI.getMedia = function() {
@@ -132,6 +177,13 @@ fakeAPI.getMedia = function() {
 fakeAPI.fetchMedia = function(id) {
     return fakeAPI.media.find((elem) => {
         return elem.id == id;
+    });
+}
+
+// Returns the media for a specified station
+fakeAPI.getMediaForStation = function(station) {
+    return fakeAPI.media.filter((elem) => {
+        return elem.station == station.id
     });
 }
 

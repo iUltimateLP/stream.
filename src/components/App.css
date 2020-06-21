@@ -14,6 +14,11 @@
 	scroll-padding-top: 64px;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 body {
 	overflow-x: hidden;
 }
@@ -421,6 +426,60 @@ section:first-of-type {
 
 .actors-container>.actor:hover {
 	transform: scale(1.1);
+}
+
+.stations-container {
+	display: grid;
+	grid-template-columns: 30% 70%;
+}
+
+.station-header {
+	width: 320px;
+	height: 180px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.station-header>div {
+	display: flex;
+	height: 50%;
+}
+
+.station-header>div>img {
+	height: 100%;
+	margin-top: 2px;
+	padding-left: 8px;
+}
+
+.station-description {
+	margin-top: 64px;
+	margin-left: 64px;
+	font-family: Helvetica;
+	font-size: 12pt;
+	color: #9E9E9E;
+}
+
+.station-socials {
+	margin-top: 64px;
+	margin-left: 64px;
+	font-size: 24pt;
+}
+
+.station-socials>a {
+	color: #9e9e9e;
+	margin-right: 16px;
+}
+
+.station-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-flow: row;
+	justify-items: center;
+	row-gap: 64px;
+	height: calc(100vh - 77px);
+	padding-top: 64px;
+	overflow-y: scroll;
 }
 
 ::-webkit-scrollbar

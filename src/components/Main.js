@@ -22,6 +22,7 @@ import Zoom from '@material-ui/core/Zoom';
 import Navbar from './Navbar';
 import Home from './Home';
 import Watch from './Watch';
+import Station from './Station';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -72,6 +73,7 @@ class Main extends React.Component {
 				<Switch>
 					<Route exact path='/' component={Home}/>
 					<Route path='/watch/:id' component={Watch}/>
+					<Route path='/station/:id' component={Station}/>
 				</Switch>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">
