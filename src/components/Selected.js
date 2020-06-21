@@ -44,7 +44,7 @@ class Selected extends React.Component {
             <section id={this.state.type} className={"selected-container"}>
                 <h1>{this.getHeading()}</h1>
                 <div className={"selected-grid"}>
-                    <MediaCard item={FakeAPI.getMedia()[0]} type={"dvd"}/>
+                    <MediaCard item={FakeAPI.randomMedia()} type={"dvd"}/>
                     <div className={"selected-scroller"}>
                         {FakeAPI.getMedia().map((value) => (
                             <MediaCard key={value.id} item={value} type={"small"}/>

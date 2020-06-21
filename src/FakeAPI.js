@@ -44,7 +44,7 @@ fakeAPI.getRandomActors = function() {
     var howMany = Math.round(Math.random() * 3);
     var actors = [];
     for (var i = 0; i <= howMany; i++) {
-        var randomIndex = Math.round(Math.random() * fakeAPI.actors.length);
+        var randomIndex = Math.round(Math.random() * (fakeAPI.actors.length - 1));
         actors.push(fakeAPI.actors[randomIndex]);
     }
     return actors;
@@ -54,52 +54,52 @@ fakeAPI.getRandomActors = function() {
 fakeAPI.media = [{
     id: 1,
     type: "video",
-    title: "Test Item 1",
-    station: "Bremen Vier",
+    title: "Freiraum",
+    station: "Bremen Zwei",
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
-    thumbnail: "assets/img/content_placeholder.png",
+    thumbnail: "assets/img/content_1.png",
     source: "path/to/source.mp4"
 }, {
     id: 2,
     type: "video",
-    title: "Test Item 2",
-    station: "Bremen Vier",
+    title: "Mare Radio",
+    station: "Bremen Zwei",
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
-    thumbnail: "assets/img/content_placeholder.png",
+    thumbnail: "assets/img/content_2.png",
     source: "path/to/source.mp4"
 }, {
     id: 3,
     type: "video",
-    title: "Test Item 3",
-    station: "Bremen Vier",
+    title: "KL",
+    station: "Bremen Zwei",
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
-    thumbnail: "assets/img/content_placeholder.png",
+    thumbnail: "assets/img/content_3.png",
     source: "path/to/source.mp4"
 }, {
     id: 4,
     type: "video",
-    title: "Test Item 4",
-    station: "Bremen Vier",
+    title: "REWIND",
+    station: "Bremen NEXT",
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
-    thumbnail: "assets/img/content_placeholder.png",
+    thumbnail: "assets/img/content_4.png",
     source: "path/to/source.mp4"
 }, {
     id: 5,
     type: "video",
-    title: "Test Item 5",
-    station: "Bremen Vier",
+    title: "Alles Tatami",
+    station: "Bremen Zwei",
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
-    thumbnail: "assets/img/content_placeholder.png",
+    thumbnail: "assets/img/content_5.png",
     source: "path/to/source.mp4"
 }, {
     id: 6,
@@ -109,7 +109,7 @@ fakeAPI.media = [{
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
-    thumbnail: "assets/img/content_placeholder.png",
+    thumbnail: "assets/img/content_2.png",
     source: "path/to/source.mp3"
 }, {
     id: 7,
@@ -119,7 +119,7 @@ fakeAPI.media = [{
     date: "03. April 2020",
     description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
     actors: fakeAPI.getRandomActors(),
-    thumbnail: "assets/img/content_placeholder.png",
+    thumbnail: "assets/img/content_4.png",
     source: "path/to/source.mp3"
 },];
 
