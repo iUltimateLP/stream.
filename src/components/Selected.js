@@ -14,7 +14,6 @@
 //              handled the same.
 
 import React from 'react'
-import { Container, Grid, Paper, Toolbar, Link, Icon, GridList } from '@material-ui/core'
 import MediaCard from './MediaCard';
 import FakeAPI from './../FakeAPI';
 

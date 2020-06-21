@@ -27,10 +27,10 @@ class MediaCard extends React.Component {
 
     render() {
         return (
-            <Link to={`/watch/${this.state.item.id}`}>
+            <Link to={`/watch/${this.state.item.id}`} className={"media-link"}>
                 <div className={"media-tile " + this.state.type}>
                     <div className={"media-tile-cover-wrapper"}>
-                        <div className={"media-tile-cover"} style={{"backgroundImage": "url(\"" + this.state.item.thumbnail + "\")"}}/>
+                        <div className={"media-tile-cover"} style={{"backgroundImage": "url(\"/" + this.state.item.thumbnail + "\")"}}/>
                     </div>
                     <h1>{this.state.item.title}</h1>
                     <h4>{this.state.item.station}</h4>
