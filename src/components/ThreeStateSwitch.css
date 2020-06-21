@@ -1,0 +1,32 @@
+/*
+	 	   _                                         
+	 ___  | |_   _ __    ___    __ _   _ __ ___      
+	/ __| | __| | '__|  / _ \  / _` | | '_ ` _ \     
+	\__ \ | |_  | |    |  __/ | (_| | | | | | | |  _ 
+	|___/  \__| |_|     \___|  \__,_| |_| |_| |_| (_)
+													
+	Created by David Bollmann and Jonathan Verbeek (jverbeek.de)
+	Hochschule Bremen City University of Applied Sciences
+*/
+
+.three-switch-container {
+    background-color: #eee;
+    width: 48px;
+    height: 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.three-switch-container>.handle {
+    width: 24px;
+    height: 24px;
+    background-color: #ff5722;
+    border-radius: 16px;
+    transition: margin-left 0.1s ease-in-out, transform 0.1s ease-in-out
+}
+
+.three-switch-container:hover>.handle {
+    transform: scale(1.15);
+}

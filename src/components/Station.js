@@ -12,7 +12,6 @@
 // Station.js: 
 
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
 import FakeAPI from './../FakeAPI';
 import MediaCard from './MediaCard';
 
@@ -40,7 +39,7 @@ class Station extends React.Component {
                     <div style={{"paddingRight": "64px"}}>
                         <div className={"station-header"} style={{"backgroundColor": this.state.station.color}}>
                             <div>
-                                <img src={this.state.station.logo} style={{"marginTop": "8px"}}></img>
+                                <img src={this.state.station.logo} style={{"marginTop": "9px"}}></img>
                             </div>
                         </div>
                         <div className={"station-description"}>

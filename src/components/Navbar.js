@@ -21,6 +21,7 @@ import MuiSwitch from '@material-ui/core/Switch';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import FakeAPI from './../FakeAPI';
+import ThreeStateSwitch from './ThreeStateSwitch';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -59,6 +60,10 @@ class Navbar extends React.Component {
         });
     }
 
+    onGlobalFilterStateChange(newFilter) {
+        
+    }
+
     render() {
         return (
             <div>
@@ -78,10 +83,11 @@ class Navbar extends React.Component {
                             }
                         </Menu>
                         <Icon>headset</Icon>
-                        <MuiSwitch></MuiSwitch>
+                        <ThreeStateSwitch initialState={1} onStateChange={(newState) => this.onGlobalFilterStateChange(newState)}/>
                         <Icon style={{"marginRight": "12px"}}>play_arrow</Icon>
                         <IconButton onClick={() => this.onSearchClicked()} color="primary" component="span">
-                            <Icon>search</Icon>
+                            {this.state.searchBarOpen && <Icon>close</Icon>}
+                            {!this.state.searchBarOpen && <Icon>search</Icon>}
                         </IconButton>
                     </Toolbar>
                 </AppBar>
