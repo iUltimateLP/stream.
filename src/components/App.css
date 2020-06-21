@@ -31,12 +31,13 @@ section:first-of-type {
 	padding-top: calc(77px - 64px);
 }
 
-.navbar>a[href] {
+.navbar>a {
 	font-family: Futura;
 	font-weight: bold;
 	padding-right: 36px;
 	text-decoration: none;
 	color: black;
+	cursor: pointer;
 }
 
 .navbar-title {

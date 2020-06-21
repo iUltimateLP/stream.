@@ -20,9 +20,16 @@ class Watch extends React.Component {
         super(props);
 
         this.state = {
-            id: props.match.params.id,
-            media: FakeAPI.fetchMedia(props.match.params.id),
+            media: FakeAPI.fetchMedia(props.match.params.id)
         };
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            this.setState({
+                media: FakeAPI.fetchMedia(this.props.match.params.id)
+            });
+        }
     }
 
     render() {
@@ -39,7 +46,7 @@ class Watch extends React.Component {
                             <div>
                                 <h1>{this.state.media.title}</h1>
                                 <div className={"video-subtitle"}>
-                                    <h2>{this.state.media.station}</h2>
+                                    <h2>{FakeAPI.fetchStation(this.state.media.station).name}</h2>
                                     <p>{this.state.media.date}</p>
                                 </div>
                                 <p>

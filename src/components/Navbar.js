@@ -65,11 +65,11 @@ class Navbar extends React.Component {
                 <AppBar color="inherit">
                     <Toolbar className={"navbar"}>
                         <Link to='/' style={{"flexGrow": 1}}><h1 className={"navbar-title"}>stream.</h1></Link>
-                        <a href='#feed'>Kategorien</a>
-                        <a href='#recommended'>Empfohlen</a>
-                        <a href='#favourite'>Favoriten</a>
-                        <a href='#archive'>Archiv</a>
-                        <a href="#" id="stations-link" aria-controls="simple-menu" aria-haspopup="true" onClick={() => this.showStationsMenu()}>Sender</a>
+                        <a href='/#feed'>Kategorien</a>
+                        <a href='/#recommended'>Empfohlen</a>
+                        <a href='/#favourite'>Favoriten</a>
+                        <a href='/#archive'>Archiv</a>
+                        <a id="stations-link" aria-controls="simple-menu" aria-haspopup="true" onClick={() => this.showStationsMenu()}>Sender</a>
                         <Menu id="simple-menu" anchorEl={this.state.stationsAnchor} keepMounted open={Boolean(this.state.stationsAnchor)} onClose={() => this.hideStationsMenu()}>
                             {
                                 FakeAPI.getStations().map((station) => (
