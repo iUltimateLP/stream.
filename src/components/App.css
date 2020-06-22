@@ -358,7 +358,7 @@ section:first-of-type {
 	grid-template-columns: 1fr 1fr;
 }
 
-.video-info>div>h1 {
+.video-info>div>h1, .audio-player>.info>h1, .audio-player>.chapters>h1 {
 	font-family: Futura;
 	font-weight: bold;
 	font-size: 32pt;
@@ -390,6 +390,46 @@ section:first-of-type {
 .video-info>div>p {
 	font-family: Helvetica;
 	font-size: 12pt;
+}
+
+.audio-player {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	height: calc(100vh - 64px);
+}
+
+.audio-player>.cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.audio-player>.info {
+	padding: 32px;
+}
+
+.audio-player>.chapters {
+	padding: 32px;
+}
+
+.audio-player>.chapters>.chapters-scroller {
+	padding-top: 32px;
+}
+
+.audio-player>.chapters>.chapters-scroller>.chapter {
+	display: flex;
+	align-items: center;
+	height: 64px;
+	font-family: Helvetica;
+	font-size: 18pt;
+	cursor: pointer;
+	-webkit-user-select: none;
+	padding-left: 8px;
+}
+
+.audio-player>.chapters>.chapters-scroller>.chapter:hover {
+	background-color: #ccc;
 }
 
 .share-container {
@@ -489,12 +529,11 @@ section:first-of-type {
 	height: 8px;
 }
 
-::-webkit-scrollbar-thumb
-{
+*:hover>::-webkit-scrollbar-thumb {
 	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-	background-color: rgba(0, 0, 0, 0.4);
+::-webkit-scrollbar-thumb
+{
+	border-radius: 8px;
 }

@@ -20,7 +20,8 @@ class Watch extends React.Component {
         super(props);
 
         this.state = {
-            media: FakeAPI.fetchMedia(props.match.params.id)
+            media: FakeAPI.fetchMedia(props.match.params.id),
+            currentChapter: 1
         };
     }
 
@@ -73,8 +74,44 @@ class Watch extends React.Component {
                         </div>
                     </section>
                 </div>}
-                {this.state.media.type == "audio" && <div>
-                    
+                {this.state.media.type == "audio" && <div className={"audio-player"}>
+                    <div className={"cover"} style={{"backgroundImage": "url(\"/" + this.state.media.thumbnail + "\")"}}></div>
+                    <div className={"info"}>
+                        <h1>{this.state.media.title}</h1>
+                        <div className={"video-subtitle"}>
+                            <h2>{FakeAPI.fetchStation(this.state.media.station).name}</h2>
+                            <p>{this.state.media.date}</p>
+                        </div>
+                        <p>
+                            {this.state.media.description}
+                        </p>
+                        <div className={"share-container"}>
+                            <a href="#"><i className={"fa fa-facebook"}></i></a>
+                            <a href="#"><i className={"fa fa-twitter"}></i></a>
+                            <a href="#"><i className={"fa fa-envelope"}></i></a>
+                            <a href="#"><i className={"fa fa-share"}></i></a>
+                        </div>
+                        <div className={"actors-container"}>
+                            {
+                                this.state.media.actors.map((actor) => (
+                                    <div className={"actor"} title={actor.long}>{actor.short}</div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    <div className={"chapters"}>
+                        <h1>Kapitel</h1>
+                        <div className={"chapters-scroller"}>
+                            {
+                                [1, 2, 3, 4].map((index) => (
+                                    <div className={"chapter"} onClick={() => this.setState({currentChapter: index})}>
+                                        {index == this.state.currentChapter && <i className={"fa fa-play"} style={{"paddingRight": "8px", "color": "#f44336"}}></i>}
+                                        Kapitel {index}
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>}
             </div>
         );
