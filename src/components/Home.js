@@ -40,11 +40,6 @@ class Home extends React.Component {
 				image: "assets/img/chai_society.png",
 				title: "Chai Society",
 				description: "Folge 3: Das Zuckerpasten-Trauma"
-			}, {
-				id: 2,
-				image: "https://mediafiles.mein-haustier.de/wp-content/uploads/2018/04/Collie-Hund-auf-der-Suche-auf-der-gr%C3%BCnen-Wiese-im-Sonnenlicht-iStock-847292246-1270x608.jpg",
-				title: "Die Collies",
-				description: "Folge 24: Rico spielt Ball (erneut)"
 			}]
 		};
 	}
