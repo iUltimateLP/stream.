@@ -46,7 +46,7 @@ class Selected extends React.Component {
                 <div className={"selected-grid"}>
                     <MediaCard item={FakeAPI.randomMedia()} type={"dvd"}/>
                     <div className={"selected-scroller"}>
-                        {FakeAPI.getMediaForType(this.props.filter).map((value) => (
+                        {FakeAPI.shuffle(FakeAPI.getMediaForType(this.props.filter)).map((value) => (
                             <MediaCard key={value.id} item={value} type={"small"}/>
                         ))}
                     </div>

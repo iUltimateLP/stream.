@@ -309,4 +309,10 @@ fakeAPI.randomMedia = function() {
     return fakeAPI.media[randomIndex];
 }
 
+fakeAPI.shuffle = function(array) {
+    var arr = array;
+    arr.sort(() => Math.random() - 0.5);
+    return arr;
+}
+
 export default fakeAPI;
