@@ -31,10 +31,10 @@ class Footer extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <a href="#">Datenschutz</a>
+                        <a href="https://www.radiobremen.de/datenschutzerklaerung100.html" target="_blank">Datenschutz</a>
                     </div>
                     <div>
-                        <a href="#">Impressum</a>
+                        <a href="https://www.radiobremen.de/unternehmen/kontakt/impressum100.html" target="_blank">Impressum</a>
                     </div>
                     <div>
                         <a href="#">Newsletter</a>

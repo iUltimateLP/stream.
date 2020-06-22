@@ -128,7 +128,97 @@ fakeAPI.media = [{
     actors: fakeAPI.getRandomActors(),
     thumbnail: "assets/img/content_4.png",
     source: "path/to/source.mp3"
-},];
+}, {
+    id: 8,
+    type: "video",
+    title: "Der Weisheit",
+    station: 2,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_6.png",
+    source: "path/to/source.mp4"
+}, {
+    id: 9,
+    type: "video",
+    title: "3 nach 9",
+    station: 5,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_7.png",
+    source: "path/to/source.mp4"
+}, {
+    id: 10,
+    type: "audio",
+    title: "Chai Society",
+    station: 2,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_8.png",
+    source: "path/to/source.mp3"
+}, {
+    id: 11,
+    type: "video",
+    title: "Das Corona-Update",
+    station: 5,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_9.png",
+    source: "path/to/source.mp4"
+}, {
+    id: 12,
+    type: "audio",
+    title: "Niederdeutsches Hörspiel",
+    station: 2,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_10.png",
+    source: "path/to/source.mp3"
+}, {
+    id: 13,
+    type: "video",
+    title: "Moabit",
+    station: 2,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_11.png",
+    source: "path/to/source.mp4"
+}, {
+    id: 14,
+    type: "video",
+    title: "Die Nacht von Lissabon",
+    station: 2,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_12.png",
+    source: "path/to/source.mp4"
+}, {
+    id: 15,
+    type: "video",
+    title: "Das erste Autokino",
+    station: 1,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_13.png",
+    source: "path/to/source.mp4"
+}, {
+    id: 16,
+    type: "audio",
+    title: "Putin wird Präsident",
+    station: 1,
+    date: "03. April 2020",
+    description: "Freiraum stellt klugen Menschen neugierige Fragen. Immer vor Publikum. Immer aus Bremen. Gemacht vom Bremer Presse-Club, Bremen Zwei und dem Weser-Kurier.",
+    actors: fakeAPI.getRandomActors(),
+    thumbnail: "assets/img/content_14.png",
+    source: "path/to/source.mp3"
+} ];
 
 // All stations the platform should support
 fakeAPI.stations = [{
