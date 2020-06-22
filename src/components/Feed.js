@@ -73,7 +73,7 @@ class Feed extends React.Component {
                     </div>
                 </Toolbar>}
                 <div className={"media-scroller"}>
-                    {FakeAPI.getMedia().map((value) => (
+                    {FakeAPI.getMediaForType(this.props.filter).map((value) => (
                         <MediaCard key={value.id} item={value} type={"dvd"}/>
                     ))}
                 </div>

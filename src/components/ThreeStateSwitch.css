@@ -22,7 +22,7 @@
 .three-switch-container>.handle {
     width: 24px;
     height: 24px;
-    background-color: #ff5722;
+    background-color: #f44336;
     border-radius: 16px;
     transition: margin-left 0.1s ease-in-out, transform 0.1s ease-in-out
 }

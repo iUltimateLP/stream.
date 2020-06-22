@@ -15,6 +15,13 @@
 
 var fakeAPI = {};
 
+// Enumeration for the type
+fakeAPI.contentType = {
+    AUDIO: 0,
+    ALL: 1,
+    VIDEO: 2
+};
+
 // A fake set of actors to display on the watch pages, totally random and based on the actors I like ;)
 fakeAPI.actors = [{
     short: "EM'B",
@@ -185,6 +192,25 @@ fakeAPI.getMediaForStation = function(station) {
     return fakeAPI.media.filter((elem) => {
         return elem.station == station.id
     });
+}
+
+// Returns the media for a specified type (video, audio, both)
+fakeAPI.getMediaForType = function(type) {
+    return fakeAPI.media.filter((elem) => {
+        return (elem.type == "audio" && type == fakeAPI.contentType.AUDIO)
+            || (elem.type == "video" && type == fakeAPI.contentType.VIDEO)
+            || (type == fakeAPI.contentType.ALL);
+    });
+}
+
+// Returns the media for a specified type and a specified station
+fakeAPI.getMediaForStationAndType = function(station, type) {
+    return fakeAPI.media.filter((elem) => {
+        return ((elem.type == "audio" && type == fakeAPI.contentType.AUDIO
+            || (elem.type == "video" && type == fakeAPI.contentType.VIDEO)
+            || (type == fakeAPI.contentType.ALL))
+            && elem.station == station.id);
+    });   
 }
 
 // Returns a random media element

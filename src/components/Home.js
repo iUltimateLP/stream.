@@ -61,16 +61,16 @@ class Home extends React.Component {
 						}
 					</Carousel>
 				</section>
-				<Feed/>
-				<Selected type={"recommended"}/>
+				<Feed filter={this.props.filter}/>
+				<Selected type={"recommended"} filter={this.props.filter}/>
 				<svg className={"deco-circle right"} style={{"transform": "translateX(50%) translateY(-25%)", "marginBottom": "25%"}} viewBox="0 0 1024 1024">
                     <circle style={{"fill": "#FFEB3B"}} cx="511.5" cy="511.5" r="512"/>
                 </svg>
-				<Selected type={"favourite"}/>
+				<Selected type={"favourite"} filter={this.props.filter}/>
 				<svg className={"deco-circle"} style={{"transform": "translateX(25%) translateY(-10%)", "marginBottom": "-10%"}} viewBox="0 0 1024 1024">
                     <circle style={{"fill": "#009688"}} cx="511.5" cy="511.5" r="256"/>
                 </svg>
-				<Selected type={"archive"}/>
+				<Selected type={"archive"} filter={this.props.filter}/>
 				<svg className={"deco-circle right"} style={{"transform": "translateX(50%) translateY(-15%)", "marginBottom": "-30%", "zIndex": "1"}} viewBox="0 0 1024 1024">
                     <circle style={{"fill": "#FF5722"}} cx="511.5" cy="511.5" r="512"/>
                 </svg>

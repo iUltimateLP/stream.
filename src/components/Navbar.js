@@ -60,10 +60,6 @@ class Navbar extends React.Component {
         });
     }
 
-    onGlobalFilterStateChange(newFilter) {
-        
-    }
-
     render() {
         return (
             <div>
@@ -83,7 +79,7 @@ class Navbar extends React.Component {
                             }
                         </Menu>
                         <Icon>headset</Icon>
-                        <ThreeStateSwitch initialState={1} onStateChange={(newState) => this.onGlobalFilterStateChange(newState)}/>
+                        <ThreeStateSwitch initialState={1} onStateChange={(newState) => this.props.onFilterChange(newState)}/>
                         <Icon style={{"marginRight": "12px"}}>play_arrow</Icon>
                         <IconButton onClick={() => this.onSearchClicked()} color="primary" component="span">
                             {this.state.searchBarOpen && <Icon>close</Icon>}

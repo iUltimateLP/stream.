@@ -54,7 +54,7 @@ class Station extends React.Component {
                     </div>
                     <div>
                         <div className={"station-content"}>
-                            {FakeAPI.getMediaForStation(this.state.station).map((value) => (
+                            {FakeAPI.getMediaForStationAndType(this.state.station, this.props.filter).map((value) => (
                                 <MediaCard key={value.id} item={value} type={"small"}/>
                             ))}
                         </div>

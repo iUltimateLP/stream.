@@ -64,16 +64,20 @@ function ScrollTop(props) {
 class Main extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			filter: 1
+		};
 	}
 
 	render() {
 		return (
 			<main>
-				<Navbar/>
+				<Navbar onFilterChange={(newFilter) => this.setState({filter: newFilter})}/>
 				<Switch>
-					<Route exact path='/' component={Home}/>
+					<Route exact path='/' render={(props) => (<Home {...props} filter={this.state.filter} />)}/>
 					<Route path='/watch/:id' component={Watch}/>
-					<Route path='/station/:id' component={Station}/>
+					<Route path='/station/:id'  render={(props) => (<Station {...props} filter={this.state.filter} />)}/>
 				</Switch>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">
