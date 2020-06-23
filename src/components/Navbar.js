@@ -60,12 +60,23 @@ class Navbar extends React.Component {
         });
     }
 
+    switchTheme() {
+        if (window.localStorage.getItem("theme") == "light") {
+            window.localStorage.setItem("theme", "dark");
+        } else {
+            window.localStorage.setItem("theme", "light");
+        }
+
+        window.location.reload();
+    }
+
     render() {
         return (
             <div>
                 <AppBar color="inherit">
                     <Toolbar className={"navbar"}>
                         <Link to='/' style={{"flexGrow": 1}}><h1 className={"navbar-title"}>stream.</h1></Link>
+                        <IconButton onClick={() => this.switchTheme()} component="span" style={{"marginRight": "8px"}}><Icon>palette</Icon></IconButton>
                         <a href='/#feed'>Kategorien</a>
                         <a href='/#recommended'>Empfohlen</a>
                         <a href='/#favourite'>Favoriten</a>

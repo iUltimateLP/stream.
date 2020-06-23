@@ -20,11 +20,17 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import App from './components/App';
 import theme from './theme';
 import * as serviceWorker from './serviceWorker';
+import './components/App.css';
 
-if (btoa(prompt("Access restricted! Enter the password to continue!")) == "cmFkaW9icmVtZW4yMDIwMDY=") {
+var currentTheme = window.localStorage.getItem("theme") == "dark" ? theme.dark : theme.light;
+if (currentTheme == theme.dark) {
+	require("./components/Dark.css");
+}
+
+if (true) { //btoa(prompt("Access restricted! Enter the password to continue!")) == "cmFkaW9icmVtZW4yMDIwMDY=") {
 	ReactDOM.render(
 		<React.StrictMode>
-			<ThemeProvider theme={theme.light}>
+			<ThemeProvider theme={currentTheme}>
 				<CssBaseline />
 				<BrowserRouter>
 					<App />

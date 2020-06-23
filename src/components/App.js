@@ -12,7 +12,6 @@
 // App.js: The entry React module to render the whole web app
 
 import React from 'react';
-import './App.css';
 import Main from "./Main";
 
 class App extends React.Component {

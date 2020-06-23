@@ -30,7 +30,7 @@ const lightTheme = createMuiTheme({
 		background: {
 	  		default: '#F3F3F3',
 		}
-  	},
+	  }
 });
 
 // Dark theme
