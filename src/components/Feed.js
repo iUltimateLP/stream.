@@ -13,7 +13,7 @@
 //          and allows the user to filter the elements to quickly find whats needed.
 
 import React from 'react'
-import { Container, Grid, Paper, Toolbar, Link, Icon } from '@material-ui/core'
+import { Toolbar, Icon } from '@material-ui/core'
 import MediaCard from './MediaCard';
 import FakeAPI from './../FakeAPI';
 
